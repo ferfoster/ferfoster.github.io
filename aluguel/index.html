@@ -7,28 +7,22 @@
     <title>Calculadora de Locação</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9926889724045560"
-     crossorigin="anonymous"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9926889724045560"
-     crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <h1>Calculadora de Proposta de Locação</h1>
         <form id="calcForm">
             <label for="currentRent">Valor Atual do Aluguel (R$):</label>
-            <input type="number" id="currentRent" required>
-
+            <input type="number" id="currentRent" oninput="calculateProposal()" required>
+        
             <label for="iptu">Valor do IPTU (R$):</label>
-            <input type="number" id="iptu" required>
-
+            <input type="number" id="iptu" oninput="calculateProposal()" required>
+        
             <label for="insurancePercent">Percentual do Seguro Locação (%):</label>
-            <input type="number" id="insurancePercent" value="14" required>
-
+            <input type="number" id="insurancePercent" value="14" oninput="calculateProposal()" required>
+        
             <label for="availableBudget">Verba Total Disponível para Investir (R$):</label>
-            <input type="number" id="availableBudget" required>
-
-            <button type="button" onclick="calculateProposal()">Calcular Proposta</button>
+            <input type="number" id="availableBudget" oninput="calculateProposal()" required>
         </form>
         <div id="results">
             <h2>Resultados</h2>
