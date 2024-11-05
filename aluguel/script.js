@@ -30,19 +30,13 @@ function calculateProposal() {
 
 // Função para compartilhar no WhatsApp
 function shareOnWhatsApp() {
-    // Obter os resultados calculados
-    const currentRentText = `Valor Atual (Aluguel + IPTU + Seguro): R$ ${document.getElementById('currentTotal').textContent.split(': ')[1]}`;
+    // Obter os resultados calculados a partir dos elementos na página
+    const currentTotalText = document.getElementById('currentTotal').textContent;
     const insuranceAmountText = document.getElementById('insuranceAmount').textContent;
-    const proposedRentText = `
-Proposta Ajustada:
-Aluguel Novo: R$ ${document.getElementById('proposedRent').children[1].textContent.split(': ')[1]}
-IPTU: R$ ${document.getElementById('proposedRent').children[3].textContent.split(': ')[1]}
-Seguro no novo valor: R$ ${document.getElementById('proposedRent').children[5].textContent.split(': ')[1]}
-Total: R$ ${document.getElementById('proposedRent').children[7].textContent.split(': ')[1]}
-`;
+    const proposedRentText = document.getElementById('proposedRent').textContent;
 
-    // Montar a mensagem para o WhatsApp
-    const message = `${currentRentText}\n${insuranceAmountText}\n\n${proposedRentText}`;
+    // Montar a mensagem formatada para WhatsApp
+    const message = `${currentTotalText}\n${insuranceAmountText}\n\n${proposedRentText}`;
 
     // Criar o link para compartilhamento no WhatsApp
     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`;
