@@ -1,0 +1,20 @@
+{
+    "name": "Calculadora de Locação",
+    "short_name": "Locação",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "description": "Calculadora de Proposta de Locação de Imóvel",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
